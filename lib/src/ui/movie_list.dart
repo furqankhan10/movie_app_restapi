@@ -14,7 +14,11 @@ class MovieList extends StatelessWidget {
       ),
       body: StreamBuilder(
         stream: bloc.allMovies,
-        builder: (context, AsyncSnapshot<ItemModel> snapshot) {
+        builder: (context, AsyncSnapshot<ItemModel> snapshot){
+
+          print('The value in snapshot is ${snapshot.data}');
+          print('The bool value in snapshot is ${snapshot.hasData}');
+          print('The ERROR in snapshot is ${snapshot.hasError}');
           if (snapshot.hasData) {
             return buildList(snapshot);
           } else if (snapshot.hasError) {

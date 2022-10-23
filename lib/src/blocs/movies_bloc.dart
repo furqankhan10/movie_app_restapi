@@ -13,7 +13,6 @@ class MoviesBloc{
   fetchAllMovies() async{
     ItemModel itemModel = await _repository.fetchAllMovies();
     _moviesFetcher.sink.add(itemModel);
-
   }
 
   dispose(){

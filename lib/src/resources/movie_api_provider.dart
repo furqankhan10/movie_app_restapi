@@ -11,7 +11,6 @@ class MovieApiProvider{
     final response = await http.get(Uri.parse('http://api.themoviedb.org/3/movie/popular?api_key=$_apiKey'));
     print(response.body);
     var data = jsonDecode(response.body.toString());
-    print('The value in data is $data');
     if(response.statusCode == 200){
      return ItemModel.fromJson(data);
     }else{
